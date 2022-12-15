@@ -1,19 +1,4 @@
-:root {
-    --main-color: #9356DC;
-    --second-color: #FF79DA;
-    --tertiary-color: #99E2D0;
-    --white-color: #FFF;
-    --grey-color: #EAEAEA;
-    --dark-grey-color: #353535;
-    --black-color: #000;
-    --green-color: #008766;
-}
-
-
-/*--- VERSION MOBILE ---*/
-
-@media screen and (max-width: 768px) {
-    /*--- BODY ---*/
+@media screen and (max-width: 992px) {
     body {
         animation-name: loader;
         animation-duration: 2s;
@@ -30,7 +15,6 @@
         }
     }
 
-    /*--- HEADER ---*/
     header {
         width: 100%;
     }
@@ -39,10 +23,10 @@
     }
     .g-logo {
         /*FIXME: regarder pourquoi l'ombre ne s'applique pas ?*/
-        background: var(--white-color);
         display: flex;
         justify-content: center;
         padding: 14px 0 10px 0;
+        background: var(--white-color);
     }
     .g-localisation {
         height: 50px;
@@ -62,13 +46,14 @@
         font-weight: 500;
         font-size: 16px;
         color: var(--dark-grey-color);
-        padding: 0 30px 0 17px;
+        padding-right: 20px;
+        padding-left: 30px;
     }
     h1 {
         margin: auto;
         padding-top: 39px;
         text-align: center;
-        width: 275px;
+        max-width: 645px;
         font-family: 'Roboto';
         font-weight: 700;
         font-size: 24px;
@@ -77,7 +62,7 @@
         padding-top: 10px;
         margin: auto;
         text-align: center;
-        width: 315px;
+        max-width: 540px;
         font-family: 'Roboto';
         font-weight: 300;
         font-size: 18px;
@@ -282,4 +267,5 @@
     li:hover i {
         color: var(--white-color);
     }
+
 }
