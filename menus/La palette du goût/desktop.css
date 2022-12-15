@@ -1,22 +1,10 @@
-:root {
-    --main-color: #9356DC;
-    --second-color: #FF79DA;
-    --tertiary-color: #99E2D0;
-    --white-color: #FFF;
-    --grey-color: #EAEAEA;
-    --dark-grey-color: #353535;
-    --black-color: #000;
-    --green-color: #008766;
-}
-
-@media screen and (max-width: 768px) {
-
-    /*--- BODY ---*/
+@media screen and (min-width: 993px) {
+    
     body {
         animation-name: loader;
         animation-duration: 2s;
         margin: auto;
-        background: #F6F6F6;
+        background: #FFF;
     }
 
     @keyframes loader {
@@ -31,12 +19,14 @@
 
     /*--- HEADER ---*/
     header {
+        position: relative;
         width: 100%;
     }
 
     .blur {
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
         position: relative;
+        z-index: 10;
     }
 
     .g-logo {
@@ -56,20 +46,24 @@
     }
 
     .bkg-menu img {
+        top: -125px;
+        position: relative;
         width: 100%;
     }
 
     main {
         position: relative;
+        display: flex;
+        justify-content: center;
     }
 
     .g-menu {
         position: absolute;
-        width: 100%;
+        width: 1055px;
         height: 1190px;
         border-radius: 50px 50px 0 0;
         background: #F6F6F6;
-        top: -50px;
+        top: -402px;
     }
 
     .title {
@@ -229,12 +223,15 @@
     }
 
     footer {
-        padding-top: 1127px;
-        height: 200px;
+        margin-top: 788px;
+        flex-direction: row-reverse;
+        display: flex;
+        height: 114px;
         background: var(--dark-grey-color);
+        padding-right: 78.42px;
     }
     footer h2 {
-        padding: 20px 0 0 25px;
+        padding: 30px 0 0 71px;
         font-family: 'Shrikhand';
         font-weight: 400;
         font-size: 18px;
@@ -242,11 +239,14 @@
         color: var(--white-color);
     }
     .btn-footer ul {
+        padding-top: 27px;
         padding-left: 25px;
+        display: flex;
     }
     .btn-footer li {
         list-style-type: none;
         background:none;
+        padding-left: 40px;
     }
     .btn-footer a {
         font-family: 'Roboto';
@@ -262,5 +262,4 @@
     li:hover i {
         color: var(--white-color);
     }
-
-}
+    }

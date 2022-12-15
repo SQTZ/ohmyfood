@@ -1,17 +1,5 @@
-:root {
-    --main-color: #9356DC;
-    --second-color: #FF79DA;
-    --tertiary-color: #99E2D0;
-    --white-color: #FFF;
-    --grey-color: #EAEAEA;
-    --dark-grey-color: #353535;
-    --black-color: #000;
-    --green-color: #008766;
-}
+@media screen and (max-width: 992px) {
 
-@media screen and (max-width: 768px) {
-
-    /*--- BODY ---*/
     body {
         animation-name: loader;
         animation-duration: 2s;
@@ -262,5 +250,5 @@
     li:hover i {
         color: var(--white-color);
     }
-
+    
 }
