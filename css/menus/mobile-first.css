@@ -7,10 +7,13 @@
     --dark-grey-color: #353535;
     --black-color: #000;
     --green-color: #008766;
+    --stroke-width: 2px;
+    --heart-width: 30px;
+    --transition-length: 1.2s;
+    --heart-color: #9356DC;
 }
 
 @media screen and (max-width: 768px) {
-
     /*--- BODY ---*/
     body {
         animation-name: loader;
@@ -18,27 +21,22 @@
         margin: auto;
         background: #F6F6F6;
     }
-
     @keyframes loader {
         from {
             opacity: 0;
         }
-
         to {
             opacity: 1;
         }
     }
-
     /*--- HEADER ---*/
     header {
         width: 100%;
     }
-
     .blur {
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
         position: relative;
     }
-
     .g-logo {
         /*FIXME: regarder pourquoi l'ombre ne s'applique pas ?*/
         background: var(--white-color);
@@ -46,7 +44,6 @@
         justify-content: center;
         padding: 14px 0 10px 0;
     }
-
     .g-logo i {
         position: absolute;
         top: 20px;
@@ -54,15 +51,12 @@
         font-size: 17px;
         color: var(--black-color);
     }
-
     .bkg-menu img {
         width: 100%;
     }
-
     main {
         position: relative;
     }
-
     .g-menu {
         position: absolute;
         width: 100%;
@@ -71,12 +65,10 @@
         background: #F6F6F6;
         top: -50px;
     }
-
     .title {
         height: 44px;
         display: flex;
     }
-
     h2 {
         font-family: 'Shrikhand';
         font-style: italic;
@@ -85,20 +77,92 @@
         padding-top: 9px;
         padding-left: 17px;
     }
-
     .heart {
         cursor: pointer;
         font-size: 21px;
         position: absolute;
-        top: 41px;
+        top: 18px;
         right: 40px;
         color: var(--black-color);
     }
-
-    .parts {
-        padding-top: 40.47px;
+    .heart-container {
+        position: relative;
+        width: var(--heart-width, 100px);
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        clip-path: url(#svgClip);
     }
-
+    .heart-clip {
+        appearance: none;
+        margin: 0px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        overflow: hidden;
+        z-index: 2;
+    }
+    .heart-clip+.fill {
+        top: 0;
+        left: 0;
+        transform: translateY(50%);
+        width: calc(2 * var(--heart-width, 100px));
+        aspect-ratio: 1/1;
+        transition: transform var(--transition-length, 0s) cubic-bezier(.2, .6, .8, .4);
+    }
+    .heart-clip:checked+.fill {
+        transform: translateY(0);
+    }
+    .heart-stroke {
+        width: calc(100% - (2 * var(--stroke-width, 2px)));
+        aspect-ratio: 1/1;
+        position: absolute;
+        top: var(--stroke-width, 0);
+        left: var(--stroke-width, 0);
+        fill: transparent;
+        ;
+        stroke: var(--heart-color);
+        stroke-width: var(--stroke-width, 1px);
+    }
+    .waveShape {
+        animation-name: waveAction;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-duration: 1s;
+        fill: var(--heart-color);
+    }
+    @keyframes waveAction {
+        0% {
+            transform: translate(-175px, 0px);
+        }
+        100% {
+            transform: translate(0px, 0px);
+        }
+    }
+    .parts1 {
+        padding-top: 40.47px;
+        animation-name: delay;
+        animation-duration: 2s;
+    }
+    .parts2 {
+        padding-top: 40.47px;
+        animation-name: delay;
+        animation-duration: 3.5s;
+    }
+    .parts3 {
+        padding-top: 40.47px;
+        animation-name: delay;
+        animation-duration: 4.5s;
+    }
+    @keyframes delay {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
     h3 {
         font-family: 'Roboto';
         font-style: normal;
@@ -108,20 +172,33 @@
         text-transform: uppercase;
         padding-left: 13px;
     }
-
     .underline {
         width: 40px;
         border: 3px solid var(--tertiary-color);
         background: var(--tertiary-color);
         margin-left: 13px;
     }
-
-    .g-containers {
+    .g-containers1 {
         display: flex;
         flex-direction: column;
         margin: auto;
+        animation-name: delay;
+        animation-duration: 2s;
     }
-
+    .g-containers2 {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        animation-name: delay;
+        animation-duration: 3.5s;
+    }
+    .g-containers3 {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        animation-name: delay;
+        animation-duration: 4.5s;
+    }
     .case {
         position: relative;
         display: flex;
@@ -134,21 +211,18 @@
         box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
         border-radius: 15.0431px;
     }
-
     .case span {
         font-family: 'Roboto';
         font-weight: bold;
         font-size: 18px;
     }
-
     .case p {
         padding-left: 10.53px;
         font-family: 'Roboto';
         font-weight: 300;
         font-size: 15px;
-        max-width: 274.79px;
+        width: auto;
     }
-
     .case h4 {
         position: absolute;
         right: 17.55px;
@@ -158,7 +232,6 @@
         font-weight: 700;
         font-size: 15px;
     }
-
     .test:hover {
         animation-name: validation;
         animation-duration: 1s;
@@ -172,34 +245,28 @@
         border-radius: 0px 15px 15px 0px;
         opacity: 0;
     }
-
     .validate img {
         margin: 25px 20px 24px 19px;
     }
-
     .validate:hover {
         cursor: pointer;
         z-index: 10;
         animation-name: validation;
         animation-duration: 1s;
     }
-
     .validprice {
         width: 150%;
     }
-
-
     @keyframes validation {
         from {
-	transform: translateX(10px);
-    opacity: 1;
+            transform: translateX(10px);
+            opacity: 1;
         }
         to {
-	transform: translateX(0px);
-    opacity: 1;
+            transform: translateX(0px);
+            opacity: 1;
         }
     }
-
     a {
         text-decoration: none;
     }
@@ -227,7 +294,6 @@
         justify-content: center;
         color: var(--white-color);
     }
-
     footer {
         padding-top: 1127px;
         height: 200px;
@@ -246,7 +312,7 @@
     }
     .btn-footer li {
         list-style-type: none;
-        background:none;
+        background: none;
     }
     .btn-footer a {
         font-family: 'Roboto';
@@ -262,5 +328,4 @@
     li:hover i {
         color: var(--white-color);
     }
-
 }
