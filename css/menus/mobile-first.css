@@ -77,67 +77,53 @@
         padding-top: 9px;
         padding-left: 17px;
     }
-    .heart {
-        cursor: pointer;
-        font-size: 21px;
-        position: absolute;
-        top: 18px;
-        right: 40px;
+    .like {
         color: var(--black-color);
+        display: flex;
+        margin: auto;
+        margin-right: 60px;
     }
-    .heart-container {
-        position: relative;
-        width: var(--heart-width, 100px);
-        aspect-ratio: 1/1;
-        overflow: hidden;
-        clip-path: url(#svgClip);
+    .like i {
+        font-size: 25px;
     }
-    .heart-clip {
-        appearance: none;
-        margin: 0px;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+    .like .fa-regular {
         position: absolute;
-        overflow: hidden;
-        z-index: 2;
+        padding-top: 18px;
+        z-index: 1;
     }
-    .heart-clip+.fill {
-        top: 0;
-        left: 0;
-        transform: translateY(50%);
-        width: calc(2 * var(--heart-width, 100px));
-        aspect-ratio: 1/1;
-        transition: transform var(--transition-length, 0s) cubic-bezier(.2, .6, .8, .4);
-    }
-    .heart-clip:checked+.fill {
-        transform: translateY(0);
-    }
-    .heart-stroke {
-        width: calc(100% - (2 * var(--stroke-width, 2px)));
-        aspect-ratio: 1/1;
+    .like .fa-solid {
+        color: white;
         position: absolute;
-        top: var(--stroke-width, 0);
-        left: var(--stroke-width, 0);
-        fill: transparent;
-        ;
-        stroke: var(--heart-color);
-        stroke-width: var(--stroke-width, 1px);
+        padding-top: 18px;
+        z-index: 0;
     }
-    .waveShape {
-        animation-name: waveAction;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        animation-duration: 1s;
-        fill: var(--heart-color);
+    .like .fa-regular:hover {
+        z-index: 0;
     }
-    @keyframes waveAction {
-        0% {
-            transform: translate(-175px, 0px);
+    .like .fa-solid:hover {
+        z-index: 1;
+        background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        animation-name: loader_button;
+        animation-duration: 300ms;
+    }
+    @keyframes loader_button {
+        from {
+            opacity: 0;
         }
-        100% {
-            transform: translate(0px, 0px);
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes unloader_button {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
         }
     }
     .parts1 {

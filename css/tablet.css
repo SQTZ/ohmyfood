@@ -3,7 +3,7 @@
     --heart-width: 30px;
     --transition-length: 1.2s;
     --heart-color: #9356DC;
- }
+}
 
 @media screen and (max-width: 992px) {
     body {
@@ -12,7 +12,6 @@
         margin: auto;
         background: #F6F6F6;
     }
-
     @keyframes loader {
         from {
             opacity: 0;
@@ -21,7 +20,6 @@
             opacity: 1;
         }
     }
-
     header {
         width: 100%;
     }
@@ -215,14 +213,6 @@
         line-height: 20px;
         color: var(--black-color);
     }
-    .menu .heart {
-        cursor: pointer;
-        font-size: 21px;
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        color: var(--black-color);
-    }
     .menu .new {
         width: 80px;
         height: 29px;
@@ -241,68 +231,54 @@
         text-align: center;
         color: var(--green-color);
     }
-
-    .heart-container {
-        position: relative;
-        width: var(--heart-width, 100px);
-        aspect-ratio: 1/1;
-        overflow: hidden;
-        clip-path: url(#svgClip);
-     }
-     
-     .heart-clip {
-        appearance: none;
-        margin: 0px;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+    .like {
+        color: var(--black-color);
+    }
+    .like i {
+        font-size: 25px;
+    }
+    .like .fa-regular {
         position: absolute;
-        overflow: hidden;
-        z-index: 2;
-     }
-     
-     .heart-clip + .fill {
-        top:0;
-        left:0;
-        transform: translateY(50%);
-        width: calc(2 * var(--heart-width, 100px));
-        aspect-ratio: 1/1;
-        transition: transform var(--transition-length, 0s) cubic-bezier(.2, .6, .8, .4);
-     }
-       
-     .heart-clip:checked + .fill {
-        transform: translateY(0);
-     }
-     
-     .heart-stroke {
-        width: calc(100% - (2 * var(--stroke-width, 2px)));
-        aspect-ratio: 1/1;
+        bottom: 22px;
+        right: 24.63px;
+        z-index: 1;
+    }
+    .like .fa-solid {
+        color: white;
         position: absolute;
-        top: var(--stroke-width, 0);
-        left: var(--stroke-width, 0);
-        fill: transparent;;
-        stroke: var(--heart-color);
-        stroke-width: var(--stroke-width, 1px);
-     }
-     
-     .waveShape {
-        animation-name: waveAction;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        animation-duration: 1s;
-        fill: var(--heart-color);
-     }
-     
-     @keyframes waveAction {
-        0% {
-           transform: translate(-175px, 0px);
+        bottom: 22px;
+        right: 24.63px;
+        z-index: 0;
+    }
+    .like .fa-regular:hover {
+        z-index: 0;
+    }
+    .like .fa-solid:hover {
+        z-index: 1;
+        background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        animation-name: loader_button;
+        animation-duration: 300ms;
+    }
+    @keyframes loader_button {
+        from {
+            opacity: 0;
         }
-        100% {
-           transform: translate(0px, 0px);
+        to {
+            opacity: 1;
         }
-     }
-
+    }
+    @keyframes unloader_button {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
     footer {
         height: 197px;
         background: var(--dark-grey-color);
@@ -320,7 +296,7 @@
     }
     .btn-footer li {
         list-style-type: none;
-        background:none;
+        background: none;
     }
     .btn-footer a {
         font-family: 'Roboto';
@@ -336,5 +312,4 @@
     li:hover i {
         color: var(--white-color);
     }
-
 }
