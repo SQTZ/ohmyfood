@@ -195,6 +195,7 @@
         background: #FFFFFF;
         box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
         border-radius: 15.0431px;
+        overflow: hidden;
     }
     .case span {
         font-family: 'Roboto';
