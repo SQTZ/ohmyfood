@@ -5,7 +5,7 @@
     --heart-color: #9356DC;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 768px) {
     body {
         animation-name: loader;
         animation-duration: 2s;
@@ -46,6 +46,7 @@
         width: 100%;
     }
     main {
+        padding-bottom: 1117px;
         position: relative;
     }
     .bkg-responsive {
@@ -190,6 +191,7 @@
         background: #FFFFFF;
         box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
         border-radius: 15.0431px;
+        overflow: hidden;
     }
     .case span {
         font-family: 'Roboto';
@@ -276,7 +278,6 @@
         color: var(--white-color);
     }
     footer {
-        padding-top: 1127px;
         height: 200px;
         background: var(--dark-grey-color);
     }

@@ -55,9 +55,10 @@
         display: flex;
         height: auto;
         justify-content: center;
+        padding-bottom: 993px;
     }
     .g-menu {
-        width: 1055px;
+        max-width: 1055px;
         margin-top: -140px;
         border-radius: 50px 50px 0 0;
         background: #F6F6F6;
@@ -68,14 +69,17 @@
         display: flex;
     }
     h2 {
+        margin: auto;
         font-family: 'Shrikhand';
         font-style: italic;
         font-weight: 400;
         font-size: 28px;
-        padding-top: 9px;
-        padding-left: 17px;
+        padding-top: 35px;
+        padding-left: 347px;
     }
     .like {
+        margin: auto;
+        padding-right: 357px;
         color: var(--black-color);
     }
     .like i {
@@ -83,15 +87,13 @@
     }
     .like .fa-regular {
         position: absolute;
-        padding-top: 41px;
-        padding-left: 24px;
+        padding-top: 22px;
         z-index: 1;
     }
     .like .fa-solid {
         color: white;
         position: absolute;
-        padding-top: 41px;
-        padding-left: 24px;
+        padding-top: 22px;
         z-index: 0;
     }
     .like .fa-regular:hover {
@@ -195,6 +197,7 @@
         background: #FFFFFF;
         box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
         border-radius: 15.0431px;
+        overflow: hidden;
     }
     .case span {
         font-family: 'Roboto';
@@ -288,7 +291,7 @@
         padding-right: 78.42px;
     }
     footer h2 {
-        padding: 30px 0 0 71px;
+        padding: 7px 0 0 71px;
         font-family: 'Shrikhand';
         font-weight: 400;
         font-size: 18px;
