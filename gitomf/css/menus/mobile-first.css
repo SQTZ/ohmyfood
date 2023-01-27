@@ -59,9 +59,9 @@
         position: relative;
     }
     .g-menu {
-        position: relative;
+        position: absolute;
         width: 100%;
-        height: auto;
+        height: 1190px;
         border-radius: 50px 50px 0 0;
         background: #F6F6F6;
         top: -50px;

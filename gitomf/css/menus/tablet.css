@@ -1,20 +1,11 @@
 :root {
-    --main-color: #9356DC;
-    --second-color: #FF79DA;
-    --tertiary-color: #99E2D0;
-    --white-color: #FFF;
-    --grey-color: #EAEAEA;
-    --dark-grey-color: #353535;
-    --black-color: #000;
-    --green-color: #008766;
     --stroke-width: 2px;
     --heart-width: 30px;
     --transition-length: 1.2s;
     --heart-color: #9356DC;
 }
 
-@media screen and (min-width: 320px) {
-    /*--- BODY ---*/
+@media screen and (min-width: 768px) {
     body {
         animation-name: loader;
         animation-duration: 2s;
@@ -58,8 +49,11 @@
         /* padding-bottom: 1117px; */
         position: relative;
     }
+    /* .bkg-responsive {
+        height: 81px;
+    } */
     .g-menu {
-        position: relative;
+        position: absolute;
         width: 100%;
         height: auto;
         border-radius: 50px 50px 0 0;
@@ -74,6 +68,7 @@
         font-family: 'Shrikhand';
         font-style: italic;
         font-weight: 400;
+        font-size: 28px;
         padding-top: 9px;
         padding-left: 17px;
     }
@@ -88,7 +83,7 @@
     }
     .like .fa-regular {
         position: absolute;
-        padding-top: 13px;
+        padding-top: 18px;
         z-index: 1;
     }
     .like .fa-solid {
@@ -209,8 +204,6 @@
         font-weight: 300;
         font-size: 15px;
         width: auto;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
     .case h4 {
         position: absolute;
@@ -221,12 +214,9 @@
         font-weight: 700;
         font-size: 15px;
     }
-    .box_left {
-        max-width: auto;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        padding-right: 113px;
+    .test:hover {
+        animation-name: validation;
+        animation-duration: 1s;
     }
     .validate {
         position: absolute;
@@ -246,17 +236,12 @@
         animation-name: validation;
         animation-duration: 1s;
     }
-    .validate2:hover {
-        z-index: 10;
-        animation-name: validation;
-        animation-duration: 1s;
-    }
     .validprice {
         width: 150%;
     }
     @keyframes validation {
         from {
-            transform: translateX(5px);
+            transform: translateX(10px);
             opacity: 1;
         }
         to {
@@ -271,6 +256,7 @@
         padding-top: 30px;
         margin: auto;
         width: 186px;
+        padding-bottom: 30px;
     }
     .btn-explore {
         height: 50px;

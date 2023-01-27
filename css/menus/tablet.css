@@ -46,19 +46,18 @@
         width: 100%;
     }
     main {
-        padding-bottom: 1117px;
+        /* padding-bottom: 1117px; */
         position: relative;
     }
-    .bkg-responsive {
+    /* .bkg-responsive {
         height: 81px;
-    }
+    } */
     .g-menu {
-        position: absolute;
+        position: relative;
         width: 100%;
         height: auto;
         border-radius: 50px 50px 0 0;
         background: #F6F6F6;
-        top: -50px;
     }
     .title {
         height: 44px;
@@ -278,6 +277,7 @@
         color: var(--white-color);
     }
     footer {
+        margin-top: -67px;
         height: 200px;
         background: var(--dark-grey-color);
     }
