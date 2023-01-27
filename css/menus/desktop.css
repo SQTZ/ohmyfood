@@ -83,6 +83,7 @@
     .like {
         margin: auto;
         padding-right: 357px;
+        padding-left: 20px;
         color: var(--black-color);
     }
     .like i {
